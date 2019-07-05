@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+        <!-- access icons from Font Awesome -->
+        <script src="https://kit.fontawesome.com/cd00e0e5af.js"></script>
+
+        <!-- remote access to Dosis font from fonts.google.com -->
+        <link
+        href="https://fonts.googleapis.com/css?family=Dosis&display=swap"
+        rel="stylesheet"/>
+
+        <!-- reference compiled CSS stylesheet -->
+        <link rel="stylesheet" href="css/main.css" />
+
+        <title>Contact Me | UX/UI Designer & Photographer</title>
+
+  </head>
+
+  <body>
+
+        <!-- header inner wrapper -->
+        <header id="header-inner">
+
+            <!-- container utility to center content and apply max-width -->
+            <div class="container">
+
+                <!-- main navigation bar -->
+                <nav id="main-nav">
+
+                    <!-- logo image -->
+                    <img src="img/logo.png" alt="My Portfolio" id="logo" />
+
+                    <!-- unordered list of links -->
+                    <ul>
+                        <!-- link to home -->
+                        <li>
+                            <a href="index.html">
+                                Home
+                            </a>
+                        </li>
+
+                        <!-- link to about page -->
+                        <li>
+                            <a href="about.html">
+                                About
+                            </a>
+                        </li>
+
+                        <!-- link to person's work -->
+                        <li>
+                            <a href="work.html">
+                                Work
+                            </a>
+                        </li>
+
+                        <!-- link to contact information -->
+                        <li>
+                            <a href="contact.html" class="current">
+                                Contact
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </nav>
+
+            </div>
+
+        </header>
+
+        <!-- first section: contact-a (contact form) -->
+        <section class="section text-center py-3" id="contact-a">
+
+            <!-- container for max-width and padding -->
+            <div class="container">
+
+                <!-- main section title -->
+                <h2 class="section-title">
+                    Contact Me
+                </h2>
+
+                <!-- styled bottom line -->
+                <div class="bottom-line">
+
+                </div>
+
+                <!-- descriptive text -->
+                <p class="lead">
+                    Here is how you can reach me
+                </p>
+
+                <!-- actual form (compatible with Netlify) -->
+                <form method="POST" data-netlify="true">
+
+                    <!-- div that contains the text fields -->
+                    <!-- will be grid container -->
+                    <div class="text-fields">
+
+                        <!-- name -->
+                        <input type="text" class="text-input name-input" name="name" placeholder="Name">
+
+                        <!-- subject -->
+                        <input type="text" class="text-input subject-input" name="subject" placeholder="Subject">
+
+                        <!-- email -->
+                        <input type="email" class="text-input email-input" name="email" placeholder="Email Address">
+
+                        <!-- phone -->
+                        <input type="text" class="text-input phone-input" name="phone" placeholder="Phone Number">
+
+                        <!-- message -->
+                        <textarea class="text-input message-input" name="message" placeholder="Enter Message"></textarea>
+
+                        <!-- spam filtering with recaptcha -->
+                        <div class="my-2">
+                            <div data-netlify-recaptcha="true"></div>
+                        </div>
+
+                    </div>
+
+                    <!-- submit button -->
+                    <button type="submit" class="btn-dark">
+                        Submit
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+        <!-- second section: contact-b (contact information) -->
+        <section id="contact-b" class="py-3 bg-dark">
+
+            <!-- container for max-width -->
+            <div class="container">
+
+                <!-- contact information wrapper -->
+                <!-- will be a grid container -->
+                <div class="contact-info">
+
+                    <!-- first element: email -->
+                    <div>
+
+                        <!-- icon -->
+                        <i class="fas fa-envelope fa-2x"></i>
+
+                        <!-- header -->
+                        <h3>
+                            Email
+                        </h3>
+
+                        <!-- content -->
+                        <p>
+                            john@something.com
+                        </p>
+
+                    </div>
+
+                    <!-- second element: phone -->
+                    <div>
+
+                        <!-- icon -->
+                        <i class="fas fa-phone fa-2x"></i>
+
+                        <!-- header -->
+                        <h3>
+                            Phone
+                        </h3>
+
+                        <!-- content -->
+                        <p>
+                            (555) - 555 - 5555
+                        </p>
+
+                    </div>
+
+                    <!-- third element: address -->
+                    <div>
+
+                        <!-- icon -->
+                        <i class="fas fa-address-card fa-2x"></i>
+
+                        <!-- header -->
+                        <h3>
+                            Address
+                        </h3>
+
+                        <!-- content -->
+                        <p>
+                            50 Main st, Boston MA
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- third section: section-c (tagline) -->
+        <!-- just a punch header -->
+
+        <section id="contact-c" class="text-center bg-main py-4">
+
+            <div class="container">
+
+                <h1>
+                    Let's Start Your Next Project
+                </h1>
+
+            </div>
+
+        </section>
+
+        <!-- main footer -->
+        <footer id="main-footer">
+
+            <!-- footer container -->
+            <div class="footer-content container">
+
+                <!-- paragraph of copyright -->
+                <p>
+                    Copyright &copy; 2019. All Rights Reserved
+                </p>
+
+                <!-- container for social icons -->
+                <div class="social">
+
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-linkedin"></i>
+
+                </div>
+
+            </div>
+
+        </footer>
+
+    </body>
+
+</html>

@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+        <!-- access icons from Font Awesome -->
+        <script src="https://kit.fontawesome.com/cd00e0e5af.js"></script>
+
+        <!-- remote access to Dosis font from fonts.google.com -->
+        <link
+        href="https://fonts.googleapis.com/css?family=Dosis&display=swap"
+        rel="stylesheet"/>
+
+        <!-- reference compiled CSS stylesheet -->
+        <link rel="stylesheet" href="css/main.css" />
+
+        <title>John Doe | UX/UI Designer & Photographer</title>
+
+  </head>
+
+  <body>
+
+        <!-- header main wrapper -->
+        <header id="header-home">
+
+            <!-- container utility to center content and apply max-width -->
+            <div class="container">
+
+                <!-- main navigation bar -->
+                <nav id="main-nav">
+
+                    <!-- logo image -->
+                    <img src="img/logo.png" alt="My Portfolio" id="logo" />
+
+                    <!-- unordered list of links -->
+                    <ul>
+                        <!-- link to home -->
+                        <li>
+                            <a href="index.html" class="current">
+                                Home
+                            </a>
+                        </li>
+
+                        <!-- link to about page -->
+                        <li>
+                            <a href="about.html">
+                                About
+                            </a>
+                        </li>
+
+                        <!-- link to person's work -->
+                        <li>
+                            <a href="work.html">
+                                Work
+                            </a>
+                        </li>
+
+                        <!-- link to contact information -->
+                        <li>
+                            <a href="contact.html">
+                                Contact
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </nav>
+
+                <!-- actual header content -->
+                <div class="header-content">
+
+                    <!-- dynamic header text -->
+                    <h1>
+                        I am John The
+
+                        <!-- Javascript class and attribute requirements for typewriter.js to work -->
+                        <span
+                        class="txt-type"
+                        data-wait="3000"
+                        data-words='["Photographer", "Designer", "UI/UX Dev"]'>
+
+                        </span>
+
+                    </h1>
+
+                    <!-- descriptive paragraph -->
+                    <p class="lead">
+                        I specialize in graphic design, UI/UX and photography
+                    </p>
+
+                    <!-- link to person's work -->
+                    <a href="work.html" class="btn-light">
+                        View My Work
+                    </a>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- first section: home-a (user specializations) -->
+        <!-- this big wrapper will center all text and add some default padding -->
+        <section id="home-a" class="text-center py-2">
+
+            <!-- container for max-width -->
+            <div class="container">
+
+                <!-- section title -->
+                <h2 class="section-title">
+                    I Specialize In
+                </h2>
+
+                <!-- a stylish line that will go below the section title -->
+                <div class="bottom-line">
+
+                </div>
+
+                <!-- descripive paragraph -->
+                <p class="lead">
+                    Photography as well as creating digital masterpieces and UI/UX layouts for websites 
+                    and mobile applications
+                </p>
+
+                <!-- div for actual specializations -->
+                <!-- this will be a grid container with 4 grid items: all divs -->
+                <div class="specials">
+
+                    <!-- first div grid item -->
+                    <div>
+
+                        <i class="fas fa-file-alt fa-2x"></i>
+
+                        <h3>Concepting</h3>
+
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            In, neque minus. Odio assumenda harum architecto sit. Nam in ratione est.
+                        </p>
+                        
+                    </div>
+
+                    <!-- second div grid item -->
+                    <div>
+
+                        <i class="fas fa-desktop fa-2x"></i>
+
+                        <h3>UI/UX</h3>
+
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            In, neque minus. Odio assumenda harum architecto sit. Nam in ratione est.
+                        </p>
+
+                    </div>
+
+                    <!-- third div grid item -->
+                    <div>
+
+                        <i class="fas fa-object-ungroup fa-2x"></i>
+
+                        <h3>Visual Design</h3>
+
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            In, neque minus. Odio assumenda harum architecto sit. Nam in ratione est.
+                        </p>
+
+                    </div>
+
+                    <!-- fourth div grid item -->
+                    <div>
+
+                        <i class="fas fa-thumbs-up fa-2x"></i>
+
+                        <h3>Interaction</h3>
+
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            In, neque minus. Odio assumenda harum architecto sit. Nam in ratione est.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- second section: home-b (clients, awards, hours worked and projects completed statistics) -->
+        <section id="home-b" class="text-center py-2">
+
+            <!-- we do not want this section bound to our regular max-width container, so no .container wrapper class here! -->
+
+            <!-- statistics wrapper (grid container) with four div children that contains each statistic -->
+            <div class="stats">
+
+                <!-- first statistic: clients -->
+                <div>
+
+                    <ul>
+
+                        <li>
+                            <i class="fas fa-users fa-3x"></i>
+                        </li>
+
+                        <li class="stats-title">
+                            Clients
+                        </li>
+
+                        <li class="stats-number">
+                            100
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <!-- second statistic: awards -->
+                <div>
+
+                    <ul>
+
+                        <li>
+                            <i class="fas fa-award fa-3x"></i>
+                        </li>
+
+                        <li class="stats-title">
+                            Awards
+                        </li>
+
+                        <li class="stats-number">
+                            3
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <!-- third statistic: hours worked -->
+                <div>
+
+                    <ul>
+
+                        <li>
+                            <i class="fas fa-hourglass-start fa-3x"></i>
+                        </li>
+
+                        <li class="stats-title">
+                            Hours Worked
+                        </li>
+
+                        <li class="stats-number">
+                            3500
+                        </li>
+
+                    </ul>
+
+                </div>
+                
+                <!-- first statistic: projects completed -->
+                <div>
+
+                    <ul>
+
+                        <li>
+                            <i class="fas fa-code-branch fa-3x"></i>
+                        </li>
+
+                        <li class="stats-title">
+                            Projects Completed
+                        </li>
+
+                        <li class="stats-number">
+                            135
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- third section: home-c (creative processing steps) -->
+        <section id="home-c" class="text-center py-2">
+
+            <!-- container for max-width limitations -->
+            <div class="container">
+
+                <!-- main header -->
+                <h2 class="section-title">
+                    My Creative Process
+                </h2>
+
+                <!-- decroative bottom line below main header -->
+                <div class="bottom-line">
+
+                </div>
+
+                <!-- lead text -->
+                <p class="lead">
+                    All of my UI/UX and design projects are based off a practiced formula to get
+                    the result I am looking for.
+                </p>
+
+                <!-- container for the 4 process steps: will be a grid container -->
+                <div class="process">
+
+                    <!-- first grid child -->
+                    <div>
+
+                        <!-- an icon... -->
+                        <i class="fas fa-file-alt fa-4x process-icon my-2">
+
+                            <!-- ...that besides the icon itself will contain a div that displays the number of the step -->
+                            <div class="process-step">
+                                1
+                            </div>
+
+                        </i>
+
+                        <!-- header text of the step -->
+                        <h3>
+                            Discuss The Project
+                        </h3>
+
+                        <!-- descriptive text of the step -->
+                        <p>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                            Accusantium velit libero amet voluptatem tenetur incidunt!
+                        </p>
+
+                    </div>
+
+                    <!-- second grid child -->
+                    <div>
+
+                        <!-- an icon... -->
+                        <i class="fas fa-desktop fa-4x process-icon my-2">
+
+                            <!-- ...that besides the icon itself will contain a div that displays the number of the step -->
+                            <div class="process-step">
+                                2
+                            </div>
+
+                        </i>
+
+                        <!-- header text of the step -->
+                        <h3>
+                            Brainstorming ^ Concept
+                        </h3>
+
+                        <!-- descriptive text of the step -->
+                        <p>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                            Accusantium velit libero amet voluptatem tenetur incidunt!
+                        </p>
+
+                    </div>
+
+                    <!-- third grid child -->
+                    <div>
+
+                        <!-- an icon... -->
+                        <i class="fas fa-object-ungroup fa-4x process-icon my-2">
+
+                            <!-- ...that besides the icon itself will contain a div that displays the number of the step -->
+                            <div class="process-step">
+                                3
+                            </div>
+
+                        </i>
+
+                        <!-- header text of the step -->
+                        <h3>
+                            UI/UX Planning
+                        </h3>
+
+                        <!-- descriptive text of the step -->
+                        <p>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                            Accusantium velit libero amet voluptatem tenetur incidunt!
+                        </p>
+
+                    </div>
+
+                    <!-- fourth grid child -->
+                    <div>
+
+                        <!-- an icon... -->
+                        <i class="fas fa-thumbs-up fa-4x process-icon my-2">
+
+                            <!-- ...that besides the icon itself will contain a div that displays the number of the step -->
+                            <div class="process-step">
+                                4
+                            </div>
+
+                        </i>
+
+                        <!-- header text of the step -->
+                        <h3>
+                            Interaction
+                        </h3>
+
+                        <!-- descriptive text of the step -->
+                        <p>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                            Accusantium velit libero amet voluptatem tenetur incidunt!
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- main footer -->
+        <footer id="main-footer">
+
+            <!-- footer container -->
+            <div class="footer-content container">
+
+                <!-- paragraph of copyright -->
+                <p>
+                    Copyright &copy; 2019. All Rights Reserved
+                </p>
+
+                <!-- container for social icons -->
+                <div class="social">
+
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-linkedin"></i>
+
+                </div>
+
+            </div>
+
+        </footer>
+
+        <!-- reference special typewriter JS script -->
+        <script src="js/typewriter.js"></script>
+
+    </body>
+
+</html>

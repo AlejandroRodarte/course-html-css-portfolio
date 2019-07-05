@@ -1,0 +1,32 @@
+// Configuration partial .scss file (not compiled but used by main.scss)
+
+// Variables declaration
+
+// website maximum width
+$website-width: 1280px;
+
+// main, light, medium and dark colors
+$main-color: #ffbc00;
+$light-color: #f4f4f4;
+$medium-color: #ccc;
+$dark-color: #333;
+
+// background image (path relative to .css file, not this .scss file! be careful)
+$bg-image: url('../img/showcase.jpg');
+
+// Functions declaration
+
+// setting text color based on background color
+@function set-text-color($background-color) {
+
+    // if lightness of color is above 50%... return black colo
+    @if(lightness($background-color) > 50) {
+        @return #000;
+    }
+
+    // if not, set to white
+    @else {
+        @return #fff;
+    }
+
+}

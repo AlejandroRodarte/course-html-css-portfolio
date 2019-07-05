@@ -1,0 +1,280 @@
+// mobile Sass styling
+
+// tablets and smaller
+@media(max-width: 800px) {
+
+    // target header home
+    #header-home {
+
+        // make height change from 100vh to 30 rem (background image wont' take as much space)
+        height: 30rem;
+
+        // target header content
+        .header-content {
+
+            // add some top padding
+            padding-top: 5rem;
+
+        }
+
+    }
+
+}
+
+// smartphones
+@media(max-width: 500px) {
+
+    // targeting the main nav
+    // flex container -> children: logo img and unordered link list
+    #main-nav {
+
+        // make the order of these two elements now go in a column fashion
+        flex-direction: column;
+
+        // center logo and unordered link list
+        // the ul is also a flex but is kept at a row flex-direction
+        align-items: center;
+
+        ul {
+            li {
+                padding: 1rem;
+            }
+        }
+
+    }
+
+    // #header base name
+    #header {
+
+        // targer #header-home
+        &-home {
+
+            // make header even smaller
+            height: 10rem;
+
+            // add a border to separate header from the other content
+            border-bottom: 3px solid $main-color;
+
+            // place photo in same position as the rest of the pages
+            background-position: 20% 30%;
+
+            // disappear .header-content container (typscript, a paragraph and the link to person's work)
+            .header-content {
+                display: none;
+            }
+
+        }
+
+        // target #header-inner
+        &-inner {
+            // alter height
+            height: 10rem;
+        }
+
+    }
+
+    // stacking grid columns
+    // these are all grid container
+    // make them of just 1 column so they stack
+    #home-a .specials, 
+    #home-b .stats, 
+    #home-c .process, 
+    #about-d .testimonials, 
+    #work-a .items, 
+    #contact-b .contact-info {
+        grid-template-columns: 1fr;
+    }
+
+    // working with #home again
+    #home {
+
+        // target #home-a
+        &-a {
+
+            // particularly each div in the .specials grid container
+            .specials div {
+
+                // add a border bottom and some separation padding
+                border-bottom: 1px $light-color solid;
+                padding-bottom: 1rem;
+
+                // remove border from last div child
+                &:last-child {
+                    border: none;
+                    padding-bottom: 0;
+                }
+
+            }
+
+        }
+
+        // target #home-b
+        &-b {
+
+            // particuarly the divs inside the .stats grid container
+            .stats div {
+                // make the boxes smaller
+                padding: 2rem 0 1rem 0;
+            }
+
+        }
+
+    }
+
+    // targeting #main-footer
+    #main-footer {
+
+        // make it taller
+        height: 7rem;
+
+        // target footer content flex container
+        .footer-content {
+
+            // make copyright and links span vertically
+            flex-direction: column;
+
+            // same height as PC version
+            height: 5rem;
+
+            // add some padding
+            padding: 1rem;
+
+            // add extra padding to paragraph to separate content
+            p {
+                padding-bottom: 0.7rem;
+            }
+
+        }
+
+    }
+
+    // about page
+
+    // #about base name
+    #about {
+
+        // target #about-a
+        &-a {
+
+            // target the .about-info grid container
+            .about-info {
+
+                // we used grid-template-areas to configure the container
+                // this is the way to stack them
+                grid-template-areas: 
+                'bio-image'
+                'bio'
+                'award-1'
+                'award-2'
+                'award-3';
+
+            }
+
+        }
+
+        // target #home-c (logos of technologies): disappear it!
+        &-c {
+            display: none;
+        }
+
+    }
+
+    // contact page
+
+    // #contact base name
+    #contact {
+
+        // target #contact-a
+        &-a {
+
+            // target .text-fields grid container
+            .text-fields {
+
+                // stack them up!
+                grid-template-areas: 
+                    'name'
+                    'subject'
+                    'email'
+                    'phone'
+                    'message';
+
+            }
+
+        }
+
+        // target #contact-b
+        &-b {
+
+            // target .contact-info grid container
+            .contact-info {
+
+                // target each grid child
+                div {
+
+                    // add some margin, padding and border
+                    margin-bottom: 1rem;
+                    padding-bottom: 1rem;
+                    border-bottom: 1px #555 solid;
+
+                    // delete previous configuration on last grid child
+                    &:last-child {
+                        margin-bottom: 0;
+                        padding-bottom: 0;
+                        border-bottom: none;
+                    }
+
+                }
+
+            }
+
+        }
+
+        // target #contact-c
+        &-c {
+
+            // target header: change font size
+            h1 {
+                font-size: 2rem;
+            }
+
+        }
+
+    }
+
+}
+
+// landscape
+@media(max-height: 580px) {
+
+    // #header
+    #header {
+
+        // target #header-home
+        &-home {
+
+            // target .header-content container: remove a lot of padding we had previously on PC version
+            .header-content {
+                padding-top: 3rem;
+            }
+
+        }
+
+    }
+
+}
+
+// iPhone 5 landscape
+@media(max-height: 330px) {
+
+    // target the header inside header content on header-home: change font size so it fits for this very special case
+    #header {
+        &-home {
+            .header-content {
+                h1 {
+                    font-size: 2rem;
+                }
+            }
+        }
+    }
+
+}

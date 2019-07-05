@@ -1,0 +1,206 @@
+// Utility Classes to recycle across all of our project
+
+// container class
+.container {
+
+    // set max width
+    max-width: $website-width;
+
+    // set general padding
+    padding: 0 1.5rem;
+
+    // always auto center this container
+    margin: auto;
+    
+    // hide overflowing content from this container
+    overflow: hidden;
+
+}
+
+// button styling
+
+// shared style between buttons (extendable class)
+%btn-shared {
+
+    // remember: a tags are inline, so make them to acquire some block properties
+    display: inline-block;
+
+    // add padding
+    padding: 0.8rem 2rem;
+
+    // transition all transitionable effects
+    transition: all 0.5;
+
+    // no border
+    border: none;
+
+    // place pointer when hovering on button
+    cursor: pointer;
+
+}
+
+// .btn base name
+.btn {
+
+    // targeting .btn-main
+    &-main {
+
+        // extend from button shared class
+        @extend %btn-shared;
+
+        // set appropiate button text color and background color
+        color: #333;
+        background-color: $main-color;
+
+    }
+
+    // targeting .btn-light
+    &-light {
+
+        // extend from button shared class
+        @extend %btn-shared;
+
+        // set appropiate button text color and background color
+        color: #333;
+        background-color: $light-color;
+
+    }
+
+    // targeting .btn-dark
+    &-dark {
+
+        // extend from button shared class
+        @extend %btn-shared;
+
+        // set appropiate button text color and background color
+        color: #f4f4f4;
+        background-color: $dark-color;
+
+    }
+
+}
+
+// target all button, a and input tags that implement a class that starts (class^=, note the carrot operator)
+// with 'btn-' and place styling when any of those elements are being hovered
+button[class^='btn-']:hover, 
+a[class^='btn-']:hover, 
+input[class^='btn-']:hover {
+    // change background color
+    background-color: $main-color;
+}
+
+// target lead class: change font size and add some margin to push down other elements
+.lead {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+}
+
+// target text-center class: center text of any element that implements this class
+.text-center {
+    text-align: center;
+}
+
+// padding utility classes: .py-1, .py-2, .py-3 and .py-4
+.py {
+
+    &-1 {
+        padding: 1rem 0;
+    }
+
+    &-2 {
+        padding: 2rem 0;
+    }
+
+    &-3 {
+        padding: 3rem 0;
+    }
+
+    &-4 {
+        padding: 4rem 0;
+    }
+
+}
+
+// margin utility classes: .my-1, .my-2, .my-3 and .my-4
+.my {
+
+    &-1 {
+        margin: 1rem 0;
+    }
+
+    &-2 {
+        margin: 2rem 0;
+    }
+
+    &-3 {
+        margin: 3rem 0;
+    }
+
+    &-4 {
+        margin: 4rem 0;
+    }
+
+}
+
+// title styling
+.section-title {
+
+    // set font size
+    font-size: 2rem;
+
+    // treat as block
+    display: block;
+
+    // add some padding
+    padding-bottom: 0.5rem;
+
+    // align text to center
+    text-align: center;
+
+    // make it bold and uppercase
+    font-weight: 100;
+    text-transform: uppercase;
+
+}
+
+// styling the bottom line divs
+.bottom-line {
+
+    // set height and width of a line
+    height: 2px;
+    width: 3rem;
+
+    // set color, treat as block
+    background: $main-color;
+    display: block;
+
+    // set margin-botton and center left/right
+    margin: 0 auto 1rem auto;
+
+}
+
+// bg (background) base name
+.bg {
+
+    // main, dark, light and medium background with text color calculated with function
+    &-main {
+        background: $main-color;
+        color: set-text-color($main-color);
+    }
+
+    &-dark {
+        background: $dark-color;
+        color: set-text-color($dark-color);
+    }
+
+    &-light {
+        background: $light-color;
+        color: set-text-color($light-color);
+    }
+
+    &-medium {
+        background: $medium-color;
+        color: set-text-color($medium-color);
+    }
+
+}

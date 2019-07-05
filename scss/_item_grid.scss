@@ -1,0 +1,215 @@
+// work.html separate styling
+// on a separate file due to the amount of styling needed
+// still will be imported to main.scss and compiled to main.css
+
+// targeting items container
+.items {
+
+    // make this container a grid container
+    // children: 9 .item divs
+    display: grid;
+
+    // make this grid be made up of 3 columns
+    grid-template-columns: repeat(3, 1fr);
+
+    // set a right-bottom black shadow with an opacity effect (0.3)
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3);
+
+    // targeting each individual item container
+    .item {
+
+        // position item container relative since we will create an overlay (virtual last child)
+        // that will be positioned in relation to this container (absolute)
+        position: relative;
+
+        // set up background color
+        background: $main-color;
+
+        // hide overflowing content in containers
+        overflow: hidden;
+
+        // overlay layer (pops up when you hover over an item)
+        // create a virtual last child on the .item container
+        &:after {
+
+            // no textual content
+            content: '';
+            
+            // we will position this overlay in relation to the .item parent container position
+            position: absolute;
+
+            // treat this child as a block
+            display: block;
+
+            // same background as item parent container
+            background: inherit;
+
+            // set an opacity level
+            opacity: 0.9;
+
+            // place this overlay on the top left corner
+            top: 0;
+            left: 0;
+
+            // make this child occupy the same width and height of the .item parent container 
+            width: 100%;
+            height: 100%;
+
+            // transform: double de size with scale(2)
+            // translateX(-75%) translateY(-75%) moves the overlay to the top-left (diagonally) and OUT of the actual item
+            // this translation values will change when we hover over the actual item and animate it properly
+            // rotate this overlay so it enters as a diagonal when hovering
+            transform: scale(2) translateX(-75%) translateY(-75%) rotate(-28deg);
+
+            // transition the previous transform properties (scale, translateX, translateY and rotate)
+            // with animation values printed on the cubic-bezier() function
+            transition: transform 3s cubic-bezier(0.2, 1, 0.3, 1);
+
+        }
+
+        // bring on main color overlay when hovering
+        // new syntax: &:hover:after -> .item:hover:after
+        // when hovering over .item, target .item:after
+        &:hover:after {
+            // alter transform values so they are animated (actual cool animation)
+            transform: scale(2) translateX(0) translateY(0) rotate(-28deg);
+        }
+
+        // scale image on hover
+        // targeting .item-image container when .item is being hovered
+        // scale() and translateZ() in conjuction create the zoom-in effect with transitions
+        &:hover .item-image { 
+            transform: scale(1.2);
+        }
+
+        // bring in text on hover
+        // target .item-text container when .item is being hovered
+        &:hover .item-text {
+
+            // make text appear (goes from 0 to 1)
+            opacity: 1;
+
+            // make text go to original position (goes from -20% to 0)
+            transform: translateY(0);
+
+        }
+
+        // targeting .item-image container 
+        &-image {
+
+            // adjust height to allow its content to be displayed properly
+            height: auto;
+
+            // set image at z axis 0
+            transform: translateZ(0);
+
+            // make this image a block (originally inline)
+            display: block;
+
+            // transition the transform (translateZ)
+            transition: transform 750ms cubic-bezier(0.2, 1, 0.3, 1);
+
+        }
+
+        // creating first virtual child of the .item-image container (at the same level as the image)
+        &-image:before {
+
+            // no actual content
+            content: '';
+
+            // make this a block
+            display: block;
+
+            // this first virtual child is basically to add this padding (if we do not add this our images will overlap each other horribly
+            padding-top: 75%;
+
+            // hide overflowing content
+            overflow: hidden;
+
+        }
+
+        // targeting img element on .item-image
+        &-image img {
+
+            // position absolute (relative to .item-image parent container position)
+            position: absolute;
+
+            // place on top left corner
+            top: 0;
+            left: 0;
+
+            // make image occupy full height and width of parent container
+            width: 100%;
+            height: auto;
+
+            // set line height to 0
+            line-height: 0;
+
+        }
+
+        // target .image-text (main text wrapper)
+        &-text {
+
+            // make this container a flex container
+            // children: a cateogory text and a title text
+            display: flex;
+
+            // make them span out vertically
+            flex-direction: column;
+
+            // center out the content
+            align-items: center;
+            justify-content: center;
+
+            // position absolute in relation to .item container
+            position: absolute;
+
+            // center out the container
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+
+            // make the text inside this container disappear (will appear on hover)
+            opacity: 0;
+
+            // align the text inside
+            text-align: center;
+
+            // ensure the text inside is on top of the image
+            z-index: 1;
+
+            // set color text
+            color: #fff;
+
+            // move upwards the container to the point it can't be seen (will come back on hover)
+            transform: translateY(-20%);
+
+            // transition the opacity and transform properties of this element
+            transition: opacity 500ms cubic-bezier(0.2, 1, 0.3, 1), transform 500ms cubic-bezier(0.2, 1, 0.3, 1);
+
+            // add a delay (overlay effect will play first, then this)
+            transition-delay: 300ms;
+
+            // target .item-text-title inside secondary wrapper
+            &-title {
+                // set font size, padding and top margin
+                font-size: 2rem;
+                padding: 0 1rem;
+                margin: 5px 0 0 0;
+            }
+
+            // target .item-text-category inside secondary wrapper
+            &-category {
+                // make uppercase, set font size, opacity and erase margin
+                text-transform: uppercase;
+                font-size: 1.2rem;
+                opacity: 0.7;
+                margin: 0;
+            }
+
+        }
+
+    }
+
+}

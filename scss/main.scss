@@ -1,0 +1,749 @@
+// Main Sass Styling
+
+// import _config.scss, _utilities.scss and _item_grid.scss partials
+@import 'config';
+@import 'utilities';
+@import 'item_grid';
+
+// margin and padding CSS reset
+* {
+    margin: 0;
+    padding: 0;
+}
+
+// General Tag Styling
+
+// targeting the body tag
+body {
+
+    // set up font, line height
+    font-family: "Dosis", sans-serif;
+    line-height: 1.6;
+
+    // set up body background
+    background: #fff;
+
+}
+
+// targeting the link tags
+a {
+
+    // no underline
+    text-decoration: none;
+
+    // set link text color
+    color: $dark-color;
+
+}
+
+// targeting the unordered list tags
+ul {
+    // erase bullet points
+    list-style: none;
+}
+
+// targeting h2 h3 and h4 header tags
+h2,
+h3,
+h4 {
+    // make them uppercase
+    text-transform: uppercase;
+}
+
+// targeting all img tags
+img {
+    // make them occupy 100% of width of parent container
+    width: 100%;
+}
+
+// Unique Id Styling
+
+// target the logo
+#logo {
+
+    // target size of logo
+    width: 70px;
+    height: 70px;
+
+    // color text of logo in case is not found
+    color: #fff;
+
+    // make not found image text uppercase
+    text-transform: uppercase;
+
+}
+
+// target the main-nav container 
+#main-nav {
+
+    // make this nav container a flex container
+    // children: logo img, unordered link list
+    display: flex;
+
+    // align horizontally by space-between
+    // (push logo to the left and unordered list to the right)
+    justify-content: space-between;
+
+    // add some padding to this container
+    padding-top: 1rem;
+
+    // targeting unordered list nested on main-nav
+    ul {
+
+        // make this flex item a flex container
+        // children: four list items
+        // by default they will be ordered as a row (horizontally) just as we want
+        display: flex;
+
+        // targeting list items nested on unordered list
+        li {
+
+            // add some padding to each flex item
+            padding: 1rem 1.5rem;
+
+            // targeting links nested on list items
+            a {
+
+                // no text decoration
+                text-decoration: none;
+
+                // link text color
+                color: #fff;
+
+                // make link text uppercase
+                text-transform: uppercase;
+
+                // add a border bottom that is initially transparent
+                // it will appear when the link is being hovered...
+                border-bottom: 3px transparent solid;
+
+                // add some padding bottom to the link to push down border
+                padding-bottom: 0.5rem;
+
+                // transition the border color of this link
+                // we change border color on hovering
+                transition: border-color 0.5s;
+
+                // targeting a:hover -> change border color (transitioned)
+                &:hover {
+                    border-color: $medium-color;
+                }
+
+                // targeting a.current (a tag with class of current) -> change border color (transitioned)
+                &.current {
+                    border-color: $main-color;
+                }
+
+            }
+
+        }
+
+    }
+
+}
+
+// #header base name
+#header {
+
+    // target #header-home
+    &-home {
+
+        // apply background image
+        background: $bg-image no-repeat center right/cover;
+
+        // make photo occupy full browser height
+        height: 100vh;
+
+        // set text color
+        color: #fff;
+
+        // target #header-home .header-content (there is .container between but it does not matter)
+        .header-content {
+
+            // align text to center
+            text-align: center;
+
+            // add padding to center out text content
+            padding: 20%;
+
+            // target header nested on .header-content -> increment font size and set line height
+            h1 {
+                font-size: 4rem;
+                line-height: 1.2;
+            }
+
+        }
+
+    }
+
+    // targeting #home-inner (home secion on about.html)
+    &-inner {
+
+        // same background but change its position
+        background: $bg-image no-repeat 20% 30%/cover;
+
+        // set height
+        height: 5.5rem;
+
+        // set a border bottom
+        border-bottom: 3px solid $main-color;
+
+    }
+
+}
+
+// home section
+
+// #home base name
+#home {
+
+    // target #home-a (user specializations)
+    &-a {
+
+        // target #home-a .specials (container with 4 divs)
+        .specials {
+
+            // set some top margin
+            margin-top: 3rem;
+
+            // make this a grid container
+            // children: 4 divs or boxes with information
+            display: grid;
+
+            // grid gap
+            grid-gap: 1rem;
+
+            // make this grid of 4 columns and same size
+            grid-template-columns: repeat(4, 1fr);
+
+            // target #home-a .specials .fas (basically all font awesome icons)
+            .fas {
+
+                // set some color to the icons 
+                color: $main-color;
+
+                // add some padding
+                padding-bottom: 0.4rem;
+
+            }
+
+        }
+
+    }
+
+    // targeting #home-b
+    &-b {
+
+        // targeting #home-b .stats
+        .stats {
+
+            // make this a grid container
+            // children: 4 divs with each statistic
+            display: grid;
+
+            // make this grid of 4 columns same size each
+            grid-template-columns: repeat(4, 1fr);
+
+            // target list items nested inside the .stats class (there is an unordered list between)
+            // but no styling is required
+            li {
+
+                // set some line height
+                line-height: 2;
+
+                // target list item that implements the stats-title class (li.stats-title): set font size
+                &.stats-title {
+                    font-size: 1.5rem;
+                }
+
+                // target list item that implements the stats-number class (li.stats-number): set font size and boldness
+                &.stats-number {
+                    font-size: 2rem;
+                    font-weight: bold;
+                }
+
+            }
+
+            // target divs (grid items) of .stats grid container
+            div {
+
+                // set general padding
+                padding: 3rem;
+
+                // target in particular odd indexed divs: set background color
+                &:nth-child(odd) {
+                    background: $light-color;
+                }
+
+                // target in particular even indexed divs: set background color
+                &:nth-child(even) {
+                    background: $medium-color;
+                }
+
+            }
+
+        }
+
+    }
+
+    // targeting #home-c
+    &-c {
+
+        // targeting process container inside
+        .process {
+
+            // make it a grid container
+            // grid children: four divs with each process step
+            display: grid;
+
+            // make this grid container of 4 columns
+            grid-template-columns: repeat(4, 1fr);
+
+            // add some margin to the grid
+            grid-gap: 1.5rem;
+
+            // center all the text inside
+            text-align: center;
+
+            // targeting .process-icon which is used just on the step icon
+            &-icon {
+
+                // make the icon round
+                border-radius: 50%;
+
+                // set background color and text color based on background color
+                background: $dark-color;
+                color: set-text-color($dark-color);
+
+                // set general padding to make icon big
+                padding: 2rem;
+
+                // set fixed height and width and line height
+                width: 70px;
+                height: 70px;
+                line-height: 70px;
+
+                // center the icon
+                text-align: center;
+
+                // make this icon relative since the div inside this icon (.process-step) will be positioned absolute
+                position: relative;
+
+                // make it animated
+                transition: all 1s;
+
+                // when hovering over the .process-icon...
+                &:hover {
+
+                    // change background
+                    background: $main-color;
+
+                    // make icon bigger
+                    width: 90px;
+                    height: 90px;
+                    line-height: 90px;
+
+                    // and also target the small process step number nested div inside
+                    .process-step {
+                        // set background color and text color based on background color
+                        background: $dark-color;
+                        color: set-text-color($dark-color);                        
+                    }
+
+                }
+
+            }
+
+            // target .process-step which is a nested div inside .process-icon
+            &-step {
+
+                // to position it, make it absolute
+                position: absolute;
+
+                // place it on the top left
+                top: 0;
+                right: 0;
+
+                // set number font size
+                font-size: 28px;
+
+                // set background color and text color based on background color
+                background: $main-color;
+                color: set-text-color($main-color);
+
+                // round the div
+                border-radius: 50%;
+
+                // set size of div
+                height: 15px;
+                width: 15px;
+                line-height: 15px;
+
+                // padding to make div bigger
+                padding: 1rem;
+
+                // animate it
+                transition: all 1s;
+
+            }
+
+        }
+
+    }
+
+}
+
+// Footer section
+
+// targeting #main-footer
+#main-footer {
+
+    // set background color and text color based on background color
+    background: $dark-color;
+    color: #fff;
+
+    // set height
+    height: 5rem;
+
+    // targeting footer container inside
+    .footer-content {
+
+        // set height
+        height: 5rem;
+
+        // make it a flex
+        // flex items: a paragraph and a div with social media icons
+        display: flex;
+
+        // align horizonally so that copyright and social icons remain on each end
+        justify-content: space-between;
+
+        // align both grid items vertically to the center
+        align-items: center;
+
+        // targeting the .social div, particularly the .fab icons...
+        .social .fab {
+
+            // separate the icons
+            margin-right: 1rem;
+
+            // add it a border
+            border: 2px #fff solid;
+
+            // make the icon round
+            border-radius: 50%;
+
+            // set size and center the icon
+            height: 20px;
+            width: 20px;
+            line-height: 20px;
+            text-align: center;
+
+            // add some padding
+            padding: 0.5rem;
+
+            // when hovering: change icon background color and icon color also
+            &:hover {
+                background: $main-color;
+                color: $dark-color;
+            }
+
+        }
+
+    }
+
+}
+
+// about page
+
+// #about base name
+#about {
+
+    // target #about-a
+    &-a {
+
+        // target about-info container
+        .about-info {
+
+            // make it a grid container
+            // children: one img, one div with title and text, and three div with award boxes
+            display: grid;
+
+            // instead of indicating the amount of columns we want, we display visually how we want it
+            // first row: 1/3 taken by image and 2/3 taken by bio text
+            // second row: each award takes 1/3 of space
+            grid-template-areas: 
+                'bio-image bio bio'
+                'award-1 award-2 award-3';
+
+            // add grid gap
+            grid-gap: 1.2rem;
+
+        }
+
+        // mapping the grid-template-areas names with the class names
+
+        .bio-image {
+            grid-area: bio-image;
+        }
+
+        // special case: bio text with have a stylish border at the left and receive some padding so
+        // text is not on the edge
+        .bio {
+            grid-area: bio;
+            border-left: 3px solid $main-color;
+            padding: 0.8rem;
+        }
+
+        .award-1 {
+            grid-area: award-1;
+        }
+
+        .award-2 {
+            grid-area: award-2;
+        }
+
+        .award-3 {
+            grid-area: award-3;
+        }
+
+        // target icons on each award box: set color and margin
+        .award-1 .fas, 
+        .award-2 .fas, 
+        .award-3 .fas {
+            color: $main-color;
+            margin: 1rem;
+        }
+
+    }
+
+    // target #about-b
+    &-b {
+
+        // targeting the progress bar div
+        .progress {
+
+            // hide overflowing content
+            overflow: hidden;
+
+            // set progress bar height
+            height: 20px;
+
+            // set progress bar default (empty) color 
+            background: $medium-color;
+
+            // round the progress bar
+            border-radius: 5px;
+
+            // separate the progress bars
+            margin-bottom: 0.6rem;
+
+            // targeting inner div (actual percentage
+            div {
+
+                // set height occupy fill size of original progress bar (parent)
+                height: 100%;
+                
+                // set color text and center (?)
+                color: #fff;
+                text-align: center;
+
+                // set background color (filling color)
+                background-color: $main-color;
+
+            }
+
+        }
+
+    }
+
+    // target #about-c
+    &-c {
+
+        // target technology logos container
+        .about-logos {
+
+            // make it a grid container
+            // items: 4 img tags
+            display: grid;
+
+            // make it of 4 columns
+            grid-template-columns: repeat(4, 1fr);
+
+            // add grid gap
+            grid-gap: 2rem;
+
+            // targeting each single image: make it occupy 70% of its container
+            img {
+                width: 70%;
+            }
+
+        }
+
+    }
+
+    // target #about-d
+    &-d {
+
+        // targeting testimonials container
+        .testimonials {
+
+            // make it a grid container
+            // children: 4 divs with testimonial information, testimonial image and name
+            display: grid;
+
+            // make it of 4 columns
+            grid-template-columns: repeat(4, 1fr);
+
+            // grid gap
+            grid-gap: 0.5rem;
+
+            // target the unordered list which is nested (contains testimonial image and name)
+            ul {
+
+                // erase bullet points
+                list-style: none;
+
+                // add margin
+                margin-top: 1rem;
+
+                // make this a flex container
+                // children: two list items: one for name and other for image
+                display: flex;
+
+                // center completely this unordered list items
+                align-items: center;
+                justify-content: center;
+
+            }
+
+            p {
+
+                border: 1px solid $medium-color;
+                border-radius: 5px;
+                padding: 0.5rem;
+
+            }
+
+            img {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                margin-right: 0.5rem;
+            }
+
+        }
+
+    }
+
+}
+
+// Contact Page
+
+// #contact base name
+#contact {
+
+    // target #contact-a
+    &-a {
+
+        // target the text fields div
+        .text-fields {
+
+            // make it a grid container
+            display: grid;
+
+            // visual grid representation
+            // first row; name and email
+            // second row: subject title and phone
+            // last row: message content
+            grid-template-areas: 
+                'name email'
+                'subject phone'
+                'message message';
+
+            // add grid gap
+            grid-gap: 1.2rem;
+
+            // add margin bottom
+            margin-bottom: 1.2rem;
+
+            // mapping grid template area names to class names
+            .name-input {
+                grid-area: name;
+            }
+
+            .subject-input {
+                grid-area: subject;
+            }
+
+            .email-input {
+                grid-area: email;
+            }
+
+            .phone-input {
+                grid-area: phone;
+            }
+
+            // special case, text area -> change height
+            .message-input {
+                grid-area: message;
+                height: 100px;
+            }
+
+            // target all text inputs
+            .text-input {
+
+                // add some padding
+                padding: 0.5rem 1rem;
+
+                // target placeholders on text inputs: set font family
+                &::placeholder {
+                    font-family: "Dosis", sans-serif;
+                }
+
+            }
+
+        }
+
+        // targeting submit button: make it occupy 50% of parent container (form) and set font
+        button[type='submit'] {
+            width: 50%;
+            font-family: "Dosis", sans-serif;
+        }
+
+    }
+
+    // target #home-b
+    &-b {
+
+        // target contact-info div
+        .contact-info {
+
+            // make thid a grid container
+            // children; 3 divs
+            display: grid;
+
+            // make this grid 3 columns wide
+            grid-template-columns: repeat(3, 1fr);
+
+            // center text inside container
+            text-align: center;
+
+        }
+
+    }
+
+    // target #home-c
+    &-c {
+
+        // target header: increase font size
+        h1 {
+            font-size: 4rem;
+        }
+
+    }
+
+}
+
+// import _media.scss partial (media queries)
+@import 'media';
